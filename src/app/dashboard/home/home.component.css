@@ -1,0 +1,8 @@
+.hide {
+    width: 0;
+  }
+  @media only screen and (min-width: 576px) {
+    .hide-on-large-screen {
+      display: none;
+    }
+  }

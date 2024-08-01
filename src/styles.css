@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~ngx-toastr/toastr';
+
+.is-invalid:not(form){
+  border-left: 5px solid red;
+}
+
+body{
+  font-family: "Times New Roman", Times, serif;
+}
+
+#download{
+  width: 90px;
+  height: 50%;
+  margin-bottom: 100%;
+  margin-top: 100%;
+}
+
+.commande-img{
+  width: 400px;
+  height: 90%;
+}
+
+.vente-img{
+  width: 350px;
+  height: 90%;
+  border-radius: 50%;
+}
+
+.welcom{
+  animation-direction: inherit;
+  animation-duration: 4s;
+}
+
+.commande-img{
+  width: 350px;
+  border-radius: 50%;
+}
+
+.medicament-img{
+  width: 350px;
+  border-radius: 50%;
+}
+
+.profil-img{
+  width: 300px;
+  border-radius: 50%;
+}
+
+.inventaire-img{
+  width: 300px;
+  border-radius: 50%;
+}
+
+.lot-img{
+  width: 300px;
+  border-radius: 25%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

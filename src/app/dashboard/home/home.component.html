@@ -1,0 +1,203 @@
+<div class="print-none full_container">
+  <div class="inner_container">
+    <!-- Sidebar  -->
+    <nav id="sidebar" [ngClass]="status ? 'hide' : ''">
+      <div class="sidebar_blog_1">
+        <div class="sidebar-header">
+          <div class="logo_section">
+          </div>
+        </div>
+
+      </div>
+      <div class="sidebar_blog_2">
+        <h4 class="text-info ">Daara Aicha <img src="../../../../assets/logo.jpeg" width="25px"></h4>
+        <ul class="list-unstyled components">
+
+          <ng-container>
+            <li class="active">
+              <a routerLink="page" data-toggle="collapse" aria-expanded="false" class="">
+                <i class="fa-solid fa-dashboard yellow_color"></i> <span class="animation-direction">Tableau de
+                  bords</span>
+              </a>
+            </li>
+            <!-- Gestion utilisateur -->
+            <li>
+              <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fa-solid fa-user blue2_color"></i> <span>Utilisateurs</span>
+              </a>
+              <ul class="collapse list-unstyled" id="element">
+                <li><a (click)="updateValueshow()" routerLink=""> <span>-> Ajouter</span></a></li>
+                <li><a (click)="updateValueshow()" routerLink=""> <span>-> Lister</span></a></li>
+              </ul>
+            </li>
+          </ng-container>
+
+
+          <!-- Gestion des recouvrements -->
+          <ng-container>
+            <li>
+
+              <a href="#profil" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fa-solid fa-hand-holding-dollar purple_color"></i><span>Recouvrements</span>
+              </a>
+              <ul class="collapse list-unstyled" id="profil">
+                <ng-container>
+                  <li><a (click)="updateValueshow()" routerLink=""> <span>-> Lister</span></a>
+                  </li>
+                </ng-container>
+
+                <ng-container>
+                  <li><a (click)="updateValueshow()" routerLink="parent-special"> <span>-> Blaclister & NPA</span></a>
+                  </li>
+                </ng-container>
+                <ng-container *ngIf="userRoles.includes('admin') || userRoles.includes('adminTemp')">
+                  <li><a (click)="updateValueshow()" routerLink="recouvrement/bloquer"> <span>-> Blocage</span></a>
+                  </li>
+
+                </ng-container>
+              </ul>
+            </li>
+          </ng-container>
+
+          <!-- Gestion Eleves -->
+          <ng-container>
+            <li>
+              <a href="#eleve" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fa-solid fa-users blue2_color"></i> <span>Eleves</span>
+              </a>
+              <ul class="collapse list-unstyled" id="eleve">
+
+                <ng-container>
+                  <li><a (click)="updateValueshow()" routerLink="list-eleve/sortie"> <span>->Lister Sorties</span></a>
+                  </li>
+                  <li><a (click)="updateValueshow()" routerLink="list-eleve"> <span>-> Lister Eleves</span></a></li>
+                </ng-container>
+                <li><a (click)="updateValueshow()" routerLink="update-eleve"> <span>-> Modifier Eleve</span></a></li>
+
+              </ul>
+            </li>
+          </ng-container>
+
+          <!-- Gestion Caisse -->
+          <ng-container>
+
+            <li>
+              <a href="#paiement" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fa-solid fa-sack-dollar green_color"></i><span>Paiement</span>
+              </a>
+              <ul class="collapse list-unstyled" id="paiement">
+                <li><a (click)="updateValueshow()" routerLink="paiement-details"> <span>->Par Matricule</span></a></li>
+                <li><a (click)="updateValueshow()" routerLink="paiement-eleve"> <span>-> Par Nom</span></a></li>
+                <li><a (click)="updateValueshow()" routerLink="paiement-historique"> <span>-> Historique</span></a></li>
+
+              </ul>
+            </li>
+          </ng-container>
+
+          <!-- Gestion Journal Caisse -->
+          <ng-container>
+
+            <li>
+              <a href="#caisse" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fa-solid fa-cash-register green_color"></i><span>Caisse</span>
+              </a>
+              <ul class="collapse list-unstyled" id="caisse">
+                <li><a (click)="updateValueshow()" routerLink="paiement-journal"> <span>-> Journal du Jour</span></a>
+                </li>
+                <li><a (click)="updateValueshow()" routerLink="caissiere-journal"> <span>-> Journal du Jour Par
+                      Caissière</span></a></li>
+                <li><a (click)="updateValueshow()" routerLink="recherche-journal-caisse"> <span>-> Journal Par
+                      Date</span></a></li>
+              </ul>
+            </li>
+          </ng-container>
+
+          <!-- Gestion Inscription -->
+          <ng-container>
+
+            <li>
+              <a href="#inscription" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fa-solid fa-file-pen blue2_color"></i><span>Inscription</span>
+              </a>
+              <ul class="collapse list-unstyled" id="inscription">
+                <li><a (click)="updateValueshow()" routerLink="list-parent"> <span>->Par Famille</span></a></li>
+                <li><a (click)="updateValueshow()" routerLink="nouveau-eleve"> <span>-> Nouveau</span></a></li>
+
+              </ul>
+            </li>
+          </ng-container>
+
+          <!-- Gestion RéInscription -->
+          <ng-container>
+
+            <li>
+              <a href="#reinscription" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fa-solid fa-file-pen blue2_color"></i><span>Rénscription</span>
+              </a>
+              <ul class="collapse list-unstyled" id="reinscription">
+                <li><a (click)="updateValueshow()" routerLink="inscrire-eleve"> <span>->Par Matricule</span></a></li>
+                <li><a (click)="updateValueshow()" routerLink="ancien-eleve"><span>-> Par Nom</span></a></li>
+
+              </ul>
+            </li>
+          </ng-container>
+
+          <!-- CLASSES-->
+          <ng-container>
+
+            <li>
+              <a href="#reinscription" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fa-solid fa-file-pen blue2_color"></i><span>Classes</span>
+              </a>
+              <ul class="collapse list-unstyled" id="reinscription">
+                <li><a (click)="updateValueshow()" routerLink="create-classe"> <span>->Creer une Classe</span></a></li>
+                <li><a (click)="updateValueshow()" routerLink="list-classe"><span>-> Lister les Classe</span></a></li>
+
+              </ul>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+      <div class="sidebar_blog_3">
+        <ul class="list-unstyled components">
+          <li class="hide-on-large-screen">
+            <a>
+              <i class="fa-solid fa-sign-out red_color"></i> <span>Déconnexion</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- end sidebar -->
+
+    <!-- right content -->
+    <div class="print-none" id="content">
+      <!-- topbar -->
+      <div class="print-none topbar">
+        <nav class="print-none navbar navbar-expand-lg navbar-light">
+          <div class="full">
+            <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa-solid fa-bars"
+                (click)="addToggle()"></i></button>
+
+            <div class="print-none right_topbar">
+              <div class="print-none icon_info">
+                <ul class="user_profile_dd">
+                  <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa-solid fa-user "></i><span
+                        class="name_user">{{user.prenom}} {{ user.nom
+                        }}</span></a>
+                    <div class="dropdown-menu">
+                      <a routerLink="resetpassword" class="dropdown-item">
+                        <span class="text-danger"> changer mot de passe </span> <i class="fa-solid fa-key ms-2"></i>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- end topbar -->
+      <router-outlet></router-outlet>

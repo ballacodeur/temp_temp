@@ -1,0 +1,13 @@
+.scrolling-message {
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 25px;
+  }
+  
+  
+  .centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
